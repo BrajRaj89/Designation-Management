@@ -1,0 +1,6 @@
+apply plugin:'java'
+dependencies
+{
+implementation files('../bl/build/libs/bl.jar','../dl/build/libs/dl.jar','../dbdl/build/libs/dbdl.jar');
+implementation fileTree(dir: 'C:/itext7',include:['*.jar']);
+}

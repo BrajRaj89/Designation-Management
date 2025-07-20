@@ -1,0 +1,1 @@
+java -cp ..\pl\build\libs\pl.jar;..\bl\build\libs\bl.jar;..\dbdl\build\libs\dbdl.jar;..\utils\itext7\*;..\utils\mysqljar\*; com.designation.pl.Main

@@ -1,0 +1,1 @@
+java -cp ..\pl\build\libs\pl.jar;..\bl\build\libs\bl.jar;..\dl\build\libs\dl.jar;..\utils\itext7\*; com.designation.pl.Main
