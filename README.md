@@ -40,8 +40,8 @@ A Java **AWT/Swing** desktop application for managing designations (e.g., job ti
    **dl/** # Data Layer - File Handling version <br>
    **dbdl/** # Data Layer - SQL Database version <br>
    **utils/** # Libraries (iText7, MySQL connector, etc.) <br>
-   all layers have the exception classes for bl BLException for dl DAOAcception 
-   the dl layer has dao and dto folders dto stands for data transfer object and dao stands for data access object <br>
+   All layers have the exception classes for bl there is BLException for dl there is DAOException 
+   the dl layer has dao and dto folders dto stands for data transfer object and dao stands for data access object are used to send data and perform operation on data <br>
 
 
 ---
