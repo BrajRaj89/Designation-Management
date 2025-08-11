@@ -35,13 +35,13 @@ A Java **AWT/Swing** desktop application for managing designations (e.g., job ti
 ---
 
 ## Project Structure
-   **pl/** # Presentation Layer (AWT/Swing UI)
-   **bl/** # Business Logic Layer
-   **dl/** # Data Layer - File Handling version
-   **dbdl/** # Data Layer - SQL Database version
-   **utils/** # Libraries (iText7, MySQL connector, etc.)
+   **pl/** # Presentation Layer (AWT/Swing UI).
+   **bl/** # Business Logic Layer.
+   **dl/** # Data Layer - File Handling version.
+   **dbdl/** # Data Layer - SQL Database version.
+   **utils/** # Libraries (iText7, MySQL connector, etc.).
    all layers have the exception classes for bl BLException for dl DAOAcception
-   the dl layer has dao and dto folders dto stands for data transfer object and dao stands for data access object 
+   the dl layer has dao and dto folders dto stands for data transfer object and dao stands for data access object.
 
 
 ---
