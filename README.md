@@ -35,12 +35,13 @@ A Java **AWT/Swing** desktop application for managing designations (e.g., job ti
 ---
 
 ## Project Structure
-pl/ # Presentation Layer (AWT/Swing UI)
-bl/ # Business Logic Layer
-dl/ # Data Layer - File Handling version
-dbdl/ # Data Layer - SQL Database version
-utils/ # Libraries (iText7, MySQL connector, etc.)
-all layers have the exception classes for bl BLException etc
+   **pl/** # Presentation Layer (AWT/Swing UI) <br>
+   **bl/** # Business Logic Layer <br>
+   **dl/** # Data Layer - File Handling version <br>
+   **dbdl/** # Data Layer - SQL Database version <br>
+   **utils/** # Libraries (iText7, MySQL connector, etc.) <br>
+   All layers have the exception classes for bl there is BLException for dl there is DAOException 
+   the dl layer has dao and dto folders dto stands for data transfer object and dao stands for data access object are used to send data and perform operation on data <br>
 
 
 ---
@@ -58,33 +59,32 @@ all layers have the exception classes for bl BLException etc
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/BrajRaj89/Designation-Management.git
+     git clone https://github.com/BrajRaj89/Designation-Management.git
 
 
 2. **Run File Handling Version**
 
-  Open a terminal/command prompt.
+     Open a terminal/command prompt.
 
-  Navigate to the pl folder.
+     Navigate to the pl folder.
 
-  Type:designation1
+     Type:designation1
 
 3. **Run SQL Database Version**
-  Ensure MySQL is running and create the table:
-    CREATE TABLE designation (
-    code INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(100) UNIQUE NOT NULL
-   );
+     Ensure MySQL is running and create the table:
+     CREATE TABLE designation (
+     code INT PRIMARY KEY AUTO_INCREMENT,
+     title VARCHAR(120) UNIQUE NOT NULL
+      );
 
- Update DB credentials in the dbdl layer DAOConnection.java 
+     Update DB credentials in the dbdl layer DAOConnection.java 
 
+     Open a terminal/command prompt.
 
-Open a terminal/command prompt.
+     Navigate to the pl folder.
 
-Navigate to the pl folder.
-
-Type: gradle build ,after updating the db credentials and creating table then
-Type: designation2
+     Type: gradle build ,after updating the db credentials and creating table then
+     Type: designation2
 
 ## UI
 ### ScreenShot & Video
