@@ -35,7 +35,7 @@ designationManager = DesignationManager.getDesignationManager();
 blDesignations = designationManager.getDesignations();
 }catch(BLException blException)
 {
-//  ?????? what to do
+//do nothing
 }
 this.designations = new LinkedList<>();
 for(DesignationInterface designation:blDesignations)

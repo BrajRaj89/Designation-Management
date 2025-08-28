@@ -404,12 +404,7 @@ JOptionPane.showMessageDialog(this,blException.getException("title"));
 titleTextField.requestFocus();
 }
 }
-/*  private ImageIcon resized(ImageIcon ic)
-{
-Image resizedImage = ic.getImage().getScaledInstance(24, 24, Image.SCALE_SMOOTH); 
-ImageIcon resizedIcon = new ImageIcon(resizedImage); 
-return resizedIcon;
-} */
+
 private void addListeners()
 {
 this.exportToPDFButton.addActionListener(new ActionListener()
