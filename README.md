@@ -88,8 +88,10 @@ A Java **AWT/Swing** desktop application for managing designations (e.g., job ti
 
 ## UI
 ### ScreenShot & Video
- https://github.com/BrajRaj89/Designation-Management/blob/main/assets/App-ui.png
- https://github.com/BrajRaj89/Designation-Management/blob/main/assets/data-report.png
+ https://github.com/BrajRaj89/Designation-Management/blob/main/assets/App-ui.png  
+ 
+ https://github.com/BrajRaj89/Designation-Management/blob/main/assets/data-report.png  
+ 
  https://github.com/BrajRaj89/Designation-Management/blob/main/assets/Demo%20video.mp4
 
 
