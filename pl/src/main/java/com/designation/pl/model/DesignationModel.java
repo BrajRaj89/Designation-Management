@@ -187,15 +187,14 @@ if(file.exists()) file.delete();
 PdfWriter pdfWriter = new PdfWriter(file);
 PdfDocument pdfDocument = new PdfDocument(pdfWriter);
 Document doc = new Document(pdfDocument);
-//create header
 Image logo = new Image(ImageDataFactory.create(this.getClass().getResource("/icons/logo.png")));
 Paragraph logoPara = new Paragraph();
 logoPara.add(logo);
-Paragraph companyNamePara = new Paragraph();
-companyNamePara.add("ABCD corporation");
+Paragraph companyNameP = new Paragraph();
+companyNameP.add("SOME_NAME corporation");
 PdfFont companyNameFont = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
-companyNamePara.setFont(companyNameFont);
-companyNamePara.setFontSize(16);
+companyNameP.setFont(companyNameFont);
+companyNameP.setFontSize(16);
 Paragraph reportTitlePara = new Paragraph("List of Designations");
 PdfFont reportTitleFont = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
 reportTitlePara.setFont(reportTitleFont);
@@ -230,7 +229,6 @@ while(x<this.designations.size())
 {
 if(newPage==true)
 {
-//create new page header
 pageNumber++;
 topTable = new Table(UnitValue.createPercentArray(topTableColumnWidths));
 cell = new Cell();
@@ -238,7 +236,7 @@ cell.setBorder(Border.NO_BORDER);
 cell.add(logoPara);
 topTable.addCell(cell);
 cell = new Cell();
-cell.add(companyNamePara);
+cell.add(companyNameP);
 cell.setBorder(Border.NO_BORDER);
 cell.setVerticalAlignment(VerticalAlignment.MIDDLE);
 topTable.addCell(cell);
@@ -282,12 +280,10 @@ dataTable.addCell(cell);
 x++;
 if(sno%pageSize==0 || x==this.designations.size())
 {
-// create footer
 doc.add(dataTable);
-doc.add(new Paragraph("Software: by @ABC_Groups"));
+doc.add(new Paragraph("Software: by @SomeName_Groups"));
 if(x<this.designations.size())
 {
-// add new page to document
 doc.add(new AreaBreak(AreaBreakType.NEXT_PAGE));
 newPage = true;
 }

@@ -33,6 +33,8 @@ private ImageIcon saveIcon;
 private ImageIcon crossIcon;
 private ImageIcon pdfIcon;
 private ImageIcon updateIcon;
+private JLabel messageLabel;
+private Font messageFont;
 public DesignationUI()
 {
 initComponents();
@@ -43,6 +45,7 @@ designationPanel.setViewMode();
 }
 private void initComponents()
 {
+messageFont = new Font("Courier New",Font.BOLD,15);
 logoIcon = new ImageIcon(this.getClass().getResource("/icons/logo.png"));
 addIcon = new ImageIcon(this.getClass().getResource("/icons/add.png"));
 editIcon = new ImageIcon(this.getClass().getResource("/icons/edit.png"));
@@ -295,7 +298,9 @@ private boolean addDesignation()
 String title = titleTextField.getText().trim();
 if(title.length()==0)
 {
-JOptionPane.showMessageDialog(this,"Designation required");
+messageLabel = new JLabel("Designation required");
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 titleTextField.requestFocus();
 return false;
 }
@@ -320,14 +325,18 @@ return true;
 {
 if(blException.hasGenericException())
 {
-JOptionPane.showMessageDialog(this,blException.getGenericException());
+messageLabel = new JLabel(blException.getGenericException());
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 return false;
 }
 else
 {
 if(blException.hasException("title"))
 {
-JOptionPane.showMessageDialog(this,blException.getException("title"));
+messageLabel = new JLabel(blException.getException("title"));
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 }
 }
 titleTextField.requestFocus();
@@ -339,7 +348,9 @@ private boolean updateDesignation()
 String title = titleTextField.getText().trim();
 if(title.length()==0)
 {
-JOptionPane.showMessageDialog(this,"Designation required");
+messageLabel = new JLabel("Designation required");
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 titleTextField.requestFocus();
 return false;
 }
@@ -365,13 +376,17 @@ return true;
 {
 if(blException.hasGenericException())
 {
-JOptionPane.showMessageDialog(this,blException.getGenericException());
+messageLabel = new JLabel(blException.getGenericException());
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 }
 else
 {
 if(blException.hasException("title"))
 {
-JOptionPane.showMessageDialog(this,blException.getException("title"));
+messageLabel  = new JLabel(blException.getException("title"));
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 }
 }
 titleTextField.requestFocus();
@@ -383,22 +398,32 @@ private void removeDesignation()
 try
 {
 String title = this.designation.getTitle();
-int selectedOption  = JOptionPane.showConfirmDialog(this,"Delete Designation :"+title,"Confirmation",JOptionPane.YES_NO_OPTION);
+messageLabel = new JLabel("Delete Designation :"+title);
+messageLabel.setFont(messageFont);
+int selectedOption  = JOptionPane.showConfirmDialog(null
+,messageLabel,"Confirmation",JOptionPane.YES_NO_OPTION);
 if(selectedOption==JOptionPane.NO_OPTION) return;
 if(selectedOption==JOptionPane.CLOSED_OPTION) return;
 designationModel.remove(this.designation.getCode());
-JOptionPane.showMessageDialog(this,"Designation :"+title+" deleted");
+messageLabel = new JLabel("Designation :"+title+" deleted");
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(this,messageLabel);
 }catch(BLException blException)
 {
 if(blException.hasGenericException())
 {
-JOptionPane.showMessageDialog(this,blException.getGenericException());
+messageLabel = new JLabel(blException.getGenericException());
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 }
 else
 {
 if(blException.hasException("title"))
 {
-JOptionPane.showMessageDialog(this,blException.getException("title"));
+JOptionPane.showMessageDialog(null,blException.getException("title"));
+messageLabel = new JLabel(blException.getException("title"));
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 }
 }
 titleTextField.requestFocus();
@@ -426,21 +451,23 @@ File file = new File(pdfFile);
 File parent = new File(file.getParent());
 if(parent.exists()==false|| parent.isDirectory()==false)
 {
-JOptionPane.showMessageDialog(DesignationUI.this,"Incorrect path "+file.getAbsolutePath());
+messageLabel = new JLabel("Incorrect path "+file.getAbsolutePath());
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 return;
 }
 designationModel.exportToPDF(file);
-JOptionPane.showMessageDialog(DesignationUI.this,"Data exported to pdf "+file.getAbsolutePath()); 
+messageLabel = new JLabel("<html><body width='300px'>PDF Created<br> Location: "+file.getAbsolutePath()+"<body></html>");
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel); 
 }catch(BLException blException)
 {
 if(blException.hasGenericException())
 {
-JOptionPane.showMessageDialog(DesignationUI.this,blException.getGenericException());
+messageLabel = new JLabel(blException.getGenericException());
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 }
-}
-catch(Exception e)
-{
-JOptionPane.showMessageDialog(DesignationUI.this,e.getMessage());
 }
 }
 }
@@ -540,7 +567,9 @@ void setEditMode()
 {
 if(designationTable.getSelectedRow()<0 || designationTable.getSelectedRow()>=designationModel.getRowCount())
 {
-JOptionPane.showMessageDialog(this,"Select designation to edit");
+messageLabel = new JLabel("Select Designation to delete");
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 return;
 }
 DesignationUI.this.setEditMode();
@@ -558,7 +587,9 @@ void setDeleteMode()
 {
 if(designationTable.getSelectedRow()<0 || designationTable.getSelectedRow()>=designationModel.getRowCount())
 {
-JOptionPane.showMessageDialog(this,"Select Designation to delete");
+messageLabel = new JLabel("Select Designation to delete");
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 return;
 }
 DesignationUI.this.setDeleteMode();
