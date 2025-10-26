@@ -320,6 +320,9 @@ rowIndex = designationModel.indexOfDesignation(d);
 designationTable.setRowSelectionInterval(rowIndex,rowIndex);
 Rectangle rectangle = designationTable.getCellRect(rowIndex,0,true);
 designationTable.scrollRectToVisible(rectangle);
+messageLabel = new JLabel("Designation Added");
+messageLabel.setFont(messageFont);
+JOptionPane.showMessageDialog(null,messageLabel);
 return true;
 }catch(BLException blException)
 {
