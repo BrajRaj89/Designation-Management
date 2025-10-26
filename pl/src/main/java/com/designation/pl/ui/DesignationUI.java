@@ -410,7 +410,7 @@ if(selectedOption==JOptionPane.CLOSED_OPTION) return;
 designationModel.remove(this.designation.getCode());
 messageLabel = new JLabel("Designation :"+title+" deleted");
 messageLabel.setFont(messageFont);
-JOptionPane.showMessageDialog(this,messageLabel);
+JOptionPane.showMessageDialog(null,messageLabel);
 }catch(BLException blException)
 {
 if(blException.hasGenericException())
