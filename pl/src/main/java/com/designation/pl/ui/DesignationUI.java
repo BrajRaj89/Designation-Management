@@ -567,7 +567,7 @@ void setEditMode()
 {
 if(designationTable.getSelectedRow()<0 || designationTable.getSelectedRow()>=designationModel.getRowCount())
 {
-messageLabel = new JLabel("Select Designation to delete");
+messageLabel = new JLabel("Select Designation to edit");
 messageLabel.setFont(messageFont);
 JOptionPane.showMessageDialog(null,messageLabel);
 return;
