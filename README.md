@@ -35,15 +35,25 @@ A Java **AWT/Swing** desktop application for managing designations (e.g., job ti
 ---
 
 ## Project Structure
-   **pl/** # Presentation Layer (AWT/Swing UI) <br>
-   **bl/** # Business Logic Layer <br>
-   **dl/** # Data Layer - File Handling version <br>
-   **dbdl/** # Data Layer - SQL Database version <br>
-   **utils/** # Libraries (iText7, MySQL connector, etc.) <br>
-   All layers have the exception classes for bl there is BLException for dl there is DAOException 
-   the dl layer has dao and dto folders dto stands for data transfer object and dao stands for data access object are used to send data and perform operation on data <br>
+```
+Designation-Management/
+│
+├── pl/ # Presentation Layer (AWT/Swing UI)
+│
+├── bl/ # Business Logic Layer
+│ └── BLException.java # Exception class for business logic
+│
+├── dl/ # Data Layer - File Handling version
+│ ├── dao/ # Data Access Objects - perform operations on data
+│ ├── dto/ # Data Transfer Objects - used to send data
+│ └── DAOException.java# Exception class for data layer
+│
+├── dbdl/ # Data Layer - SQL Database version
+│ └── DAOException.java# Exception class for database operations
+│
+├── utils/ # Libraries (iText7, MySQL connector, etc.)
 
-
+```
 ---
 
 ## How to Run
@@ -86,9 +96,12 @@ A Java **AWT/Swing** desktop application for managing designations (e.g., job ti
      Type: gradle build ,after updating the db credentials and creating table then
      Type: designation2
 
-## UI
-### ScreenShot & Video
- assets/
- assets/
+---
+## ScreenShot & Video
+ https://github.com/BrajRaj89/Designation-Management/blob/main/assets/App-ui.png  
+ 
+ https://github.com/BrajRaj89/Designation-Management/blob/main/assets/data-report.png  
+ 
+ https://github.com/BrajRaj89/Designation-Management/blob/main/assets/Demo%20video.mp4
 
 
